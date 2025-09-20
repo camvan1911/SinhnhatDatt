@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Chúc mừng sinh nhật</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+      padding-top: 80px;
+      background: linear-gradient(to bottom right, #fffbe6, #ffe4e1);
+    }
+    h1 {
+      color: #d2691e;
+      animation: fadeIn 2s ease-in-out;
+    }
+    p {
+      font-size: 20px;
+      margin: 20px 0;
+    }
+    button {
+      padding: 15px 30px;
+      margin: 10px;
+      font-size: 18px;
+      cursor: pointer;
+      border: none;
+      border-radius: 8px;
+      background-color: #ff7f50;
+      color: white;
+      transition: transform 0.3s, background-color 0.3s;
+    }
+    button:hover {
+      background-color: #ff6347;
+      transform: scale(1.05);
+    }
+    #result {
+      margin-top: 40px;
+      font-size: 22px;
+      color: #2e8b57;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+    img {
+      margin-top: 20px;
+      width: 200px;
+      display: none;
+    }
+    #backBtn {
+      display: none;
+      background-color: #4682b4;
+    }
+    #backBtn:hover {
+      background-color: #4169e1;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <h1>🎂 Cám ơn bạn đã chúc mừng sinh nhật Đạt!</h1>
+  <p id="question">Bạn có muốn tặng quà Đạt không?</p>
+  <button onclick="showThanks()">Tất nhiên rồi !! IP7 Pro Mã nhé</button>
+  <button onclick="showThanks()">Không muốn tặng</button>
+  <button id="backBtn" onclick="goBack()">🔙 Quay lại</button>
+  <div id="result"></div>
+  <img id="giftImage" src="https://cdn.tgdd.vn/Products/Images/42/317692/iphone-15-pro-max-blue-thumbnew-600x600.jpg" alt="🎉🎉🎉🎉🎉🎉">
+
+  <audio id="sound" src="https://www.soundjay.com/buttons/sounds/button-3.mp3"></audio>
+
+  <script>
+    function showThanks() {
+      document.getElementById('result').innerText = "🎁 Cám ơn bạn đã tặng iP17 Pro cho Đạt!";
+      document.getElementById('giftImage').style.display = "block";
+      document.getElementById('backBtn').style.display = "inline-block";
+      document.getElementById('sound').play();
+    }
+
+    function goBack() {
+      document.getElementById('result').innerText = "";
+      document.getElementById('giftImage').style.display = "none";
+      document.getElementById('backBtn').style.display = "none";
+    }
+  </script>
+</body>
+</html>
